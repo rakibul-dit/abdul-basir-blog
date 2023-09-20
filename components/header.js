@@ -11,8 +11,10 @@ import InfoIcon from "@mui/icons-material/InfoOutlined";
 import ContactIcon from "@mui/icons-material/ContactPageOutlined";
 // import ExpandMoreIcon from "@mui/icons-material/ExpandMoreOutlined";
 import MobileNav from "./mobile-nav";
+import { useRouter } from "next/router";
 
 export default function Header({ playlists }) {
+	const router = useRouter();
 	// show hide header on scroll
 	const header = useRef(null);
 	const [scrollTop, setScrollTop] = useState(0);
@@ -74,7 +76,10 @@ export default function Header({ playlists }) {
 							<ul className="main-menu">
 								<li>
 									<Link href={`/lectures/${youtube.uploadPlaylistID}`}>
-										<a>
+										<a
+											className={
+												router.pathname.startsWith("/lectures") ? "active" : ""
+											}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <TvIcon />*/}
 											{/*</span>*/}
@@ -124,8 +129,11 @@ export default function Header({ playlists }) {
 								</li>
 
 								<li>
-									<Link href="/books/">
-										<a>
+									<Link href="/books">
+										<a
+											className={
+												router.pathname.startsWith("/books") ? "active" : ""
+											}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <BookIcon />*/}
 											{/*</span>*/}
@@ -134,8 +142,11 @@ export default function Header({ playlists }) {
 									</Link>
 								</li>
 								<li>
-									<Link href="/research-papers/">
-										<a>
+									<Link href="/research-papers">
+										<a
+											className={
+												router.pathname == "/research-papers" ? "active" : ""
+											}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <DescriptionIcon />*/}
 											{/*</span>*/}
@@ -144,8 +155,11 @@ export default function Header({ playlists }) {
 									</Link>
 								</li>
 								<li>
-									<Link href="/articles/">
-										<a>
+									<Link href="/articles">
+										<a
+											className={
+												router.pathname.startsWith("/articles") ? "active" : ""
+											}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <ArticleIcon />*/}
 											{/*</span>*/}
@@ -154,8 +168,11 @@ export default function Header({ playlists }) {
 									</Link>
 								</li>
 								<li>
-									<Link href="/organizations/">
-										<a>
+									<Link href="/organizations">
+										<a
+											className={
+												router.pathname == "/organizations" ? "active" : ""
+											}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <CorporateFareIcon />*/}
 											{/*</span>*/}
@@ -165,7 +182,7 @@ export default function Header({ playlists }) {
 								</li>
 								<li>
 									<Link href="/about">
-										<a>
+										<a className={router.pathname == "/about" ? "active" : ""}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <InfoIcon />*/}
 											{/*</span>*/}
@@ -175,7 +192,8 @@ export default function Header({ playlists }) {
 								</li>
 								<li>
 									<Link href="/contact">
-										<a>
+										<a
+											className={router.pathname == "/contact" ? "active" : ""}>
 											{/*<span className="main-menu-icon">*/}
 											{/*  <ContactIcon />*/}
 											{/*</span>*/}

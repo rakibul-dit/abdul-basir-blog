@@ -11,17 +11,30 @@ export default function HomeBanner() {
 						<div className="h-banner-title">
 							<p>অফিসিয়াল ওয়েবসাইট</p>
 							<h1>
-								<span>ড. মুহাম্মদ সাইফুল্লাহ</span>
+								<span>ড. আব্দুল বাসির বিন নওশাদ</span>
 							</h1>
 						</div>
 						<p style={{ fontSize: "1.15rem" }}>
-							ড. মুহাম্মাদ সাইফুল্লাহ একজন ইসলামীক স্কলার, লেখক, গবেষক এবং
-							দ্বীনের একনিষ্ঠ দা'ঈ। ইসলামের প্রচার-প্রসারে স্বনামধন্য মিডিয়া
-							ব্যক্তিত্বও। তিনি ইসলামী গবেষণা, টিভি/ইউটিউব চ্যানেল এবং উন্মুক্ত
-							আলোচনার মাধ্যমে জাতীয় ও আন্তর্জাতিকভাবে পরিচিত। ফিকহ শারী'আহ,
-							ইসলামী আইন ও আইনশাস্ত্র বিভাগ, মদীনা ইসলামী বিশ্ববিদ্যালয়, কিংডম
-							অফ সৌদি আরব থেকে ব্যাচেলর, মাস্টার্স ও পিএচডি সম্পন্ন করেন।
+							মদীনা ইসলামী বিশ্ববিদ্যালয়ের (কোর্স ওয়ার্ক অব পিএইচডি)-তে
+							সম্মিলিত মেধা তালিকায় ৩য় স্থান অধিকার করে পুরস্কৃত হন এবং মেধার
+							স্বাক্ষর রেখে সর্বোচ্চ গ্রেডمُمْتَازٌ مَعَ مَرْتَبَةِ الشَّرَف
+							الأُوْلَى জিপিএ-৫ (এক্সিলেন্ট উইথ ফাস্ট ক্লাস অনার্স) পেয়ে
+							تَعْظِيْمُ الْقُرْآنِ الْكَرِيْمِ وَآثَارُهُ فِي الدَّعْوَةِ إِلَى
+							الله)) ‘কুরআনুল কারীমের প্রতি সম্মান ও ইসলামী দাওয়াতে-এর প্রভাব’
+							শীর্ষক অভিসন্দর্ভের ওপর পিএইচডি ডিগ্রী অর্জন করেন।
 						</p>
+
+						<Link href="about">
+							<button class="button-banner">
+								বিস্তারিত
+								<svg fill="currentColor" viewBox="0 0 24 24" class="icon">
+									<path
+										clip-rule="evenodd"
+										d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+										fill-rule="evenodd"></path>
+								</svg>
+							</button>
+						</Link>
 
 						{/*<div className="h-banner-link">*/}
 						{/*  <Link href="/contact/">*/}
@@ -33,7 +46,7 @@ export default function HomeBanner() {
 						{/*  </Link>*/}
 						{/*</div>*/}
 
-						<div className="row row-r">
+						{/* <div className="row row-r">
 							<div className="col col-r s12 l6">
 								<div className="h3-cat-wrap">
 									<div className="h3-cat-card">
@@ -49,7 +62,7 @@ export default function HomeBanner() {
 							<div className="col col-r s12 l6">
 								<div className="h3-cat-wrap">
 									<div className="h3-cat-card">
-										<Link href="/lectures/">
+										<Link href={`/lectures/${youtube.uploadPlaylistID}`}>
 											<a className="card card-r">
 												<i className="fas fa-video"></i>
 												<span>ভিডিও লেকচার</span>
@@ -58,7 +71,7 @@ export default function HomeBanner() {
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 
 					{/*<div className="h-banner-image">*/}
@@ -77,7 +90,7 @@ export default function HomeBanner() {
 					<div className="opt_home_featured_right">
 						<div className="opt_home_featured_image">
 							<Image
-								src="/img/rsz_20210407_211234.jpg"
+								src="/img/abdul-basir.jpg"
 								alt=""
 								layout="fill"
 								objectFit="cover"

@@ -92,35 +92,39 @@ export default function LectureList({
 			<Header playlists={playlists.playlists} />
 
 			<div className="opt_lecture_list">
-				<section className="cat-page-top cat-page-top-2 opt_lecture_cat_page_top">
+				<section className="cat-page-top cat-page-top-2">
 					<div className="page-width">
-						<div className="box">
-							<h1 ref={catRef}>
-								<div className="cat-page-top-open-btn" onClick={handleCatOpen}>
-									<i className="material-icons select-tag-icon">list</i>
-									<em>ক্যাটাগরি সমূহ</em>
+						<div className="box" ref={catRef}>
+							<h1>
+								<div className="cat-page-top-open-btn">
+									<i
+										onClick={handleCatOpen}
+										className="material-icons select-tag-icon">
+										list
+									</i>
+									{pageTitle}
 								</div>
 							</h1>
-						</div>
-					</div>
-					<div className={"select-tag-list" + (catOpen ? " open" : "")}>
-						<div className="page-width opt_page-width">
-							<div className="box opt_box">
-								<ul>
-									{playlists.playlists &&
-										playlists.playlists.map((item, index) => (
-											<li
-												className={initPlaylistId == item.id ? "selected" : ""}
-												key={item.id + index}
-												onClick={() =>
-													getCategorizedVideos(item.id, item.title)
-												}>
-												<Link href={`/lectures/${item.id}`}>
-													<a>{item.title}</a>
-												</Link>
-											</li>
-										))}
-								</ul>
+							<div className={"select-tag-list" + (catOpen ? " open" : "")}>
+								<div className="page-width">
+									<ul>
+										{playlists.playlists &&
+											playlists.playlists.map((item, index) => (
+												<li
+													className={
+														initPlaylistId == item.id ? "selected" : ""
+													}
+													key={item.id + index}
+													onClick={() =>
+														getCategorizedVideos(item.id, item.title)
+													}>
+													<Link href={`/lectures/${item.id}`}>
+														<a>{item.title}</a>
+													</Link>
+												</li>
+											))}
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -161,7 +165,7 @@ export default function LectureList({
                 </div> */}
 
 								<div className="opt_lecture_right">
-									<div className="opt_lecture_title">{pageTitle}</div>
+									{/* <div className="opt_lecture_title">{pageTitle}</div> */}
 
 									<div className="opt_lectures_wrapper">
 										<div className="row row-r">
