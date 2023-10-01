@@ -1,9 +1,9 @@
 import { server } from "../../lib/config";
 import {
-  getTafseers,
-  getTafseerDetails,
-  getRelatedTafseers,
-  getAllPlaylists2,
+	getTafseers,
+	getTafseerDetails,
+	getRelatedTafseers,
+	getAllPlaylists2,
 } from "../../lib/fetch";
 import Link from "next/link";
 import Layout from "../../components/layout";
@@ -14,117 +14,117 @@ import parse from "html-react-parser";
 import Share from "../../components/share";
 
 export default function BlogDetail({ detail, tafseers, playlists }) {
-  return (
-    <>
-      <Meta
-        title={detail.postTitle}
-        description="ড. মুহাম্মাদ সাইফুল্লাহ"
-        url={`${server}/tafseer/${detail.postSlug}`}
-        image={`${server}/img/id/default_share.png`}
-        type="article"
-      />
+	return (
+		<>
+			<Meta
+				title={detail.postTitle}
+				description="ড. আব্দুল বাসির বিন নওশাদ 'কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ' উত্তরা, ঢাকা –এর সহকারী অধ্যাপক ও একাডেমিক প্রধান হিসেবে কর্মরত আছেন। তিনি মদীনা ইসলামী বিশ্ববিদ্যালয় থেকে  ‘কুরআনুল কারীমের প্রতি সম্মান ও ইসলামী দাওয়াতে-এর প্রভাব’ শীর্ষক অভিসন্দর্ভের ওপর পিএইচডি ডিগ্রী অর্জন করেন।"
+				url={`${server}/tafseer/${detail.postSlug}`}
+				image={`${server}/img/id/default_share.png`}
+				type="website"
+			/>
 
-      <Header playlists={playlists} />
+			<Header playlists={playlists} />
 
-      <section className="blog-detail-top">
-        <div className="page-width">
-          <div className="box">
-            <Link href={detail.catURL}>
-              <a className="cat-r">{detail.catText}</a>
-            </Link>
+			<section className="blog-detail-top">
+				<div className="page-width">
+					<div className="box">
+						<Link href={detail.catURL}>
+							<a className="cat-r">{detail.catText}</a>
+						</Link>
 
-            <Link href={`/tafseer/${detail.postSlug}`}>
-              <a className="heading-r">{detail.postTitle}</a>
-            </Link>
-            <span className="date-r">{detail.postDate}</span>
-          </div>
-        </div>
-      </section>
+						<Link href={`/tafseer/${detail.postSlug}`}>
+							<a className="heading-r">{detail.postTitle}</a>
+						</Link>
+						<span className="date-r">{detail.postDate}</span>
+					</div>
+				</div>
+			</section>
 
-      <section className="blog-detail-ctn">
-        <div className="page-width">
-          <div className="box">
-            <div className="blog-area">
-              <div className="blog-detail">{parse(detail.postContent)}</div>
+			<section className="blog-detail-ctn">
+				<div className="page-width">
+					<div className="box">
+						<div className="blog-area">
+							<div className="blog-detail">{parse(detail.postContent)}</div>
 
-              <div className="blog-action">
-                <div className="blog-tag">
-                  <h2>ট্যাগ</h2>
+							<div className="blog-action">
+								<div className="blog-tag">
+									<h2>ট্যাগ</h2>
 
-                  <Link href="/tafseer/">
-                    <a>#কুরআন</a>
-                  </Link>
-                  <Link href="/tafseer/">
-                    <a>#হাদিস</a>
-                  </Link>
-                </div>
+									<Link href="/tafseer/">
+										<a>#কুরআন</a>
+									</Link>
+									<Link href="/tafseer/">
+										<a>#হাদিস</a>
+									</Link>
+								</div>
 
-                <div className="blog-share">
-                  <Share
-                    urlWeb={`tafseer/${detail.postSlug}`}
-                    urlMobile={detail.postSlug}
-                    title={detail.postTitle}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+								<div className="blog-share">
+									<Share
+										urlWeb={`tafseer/${detail.postSlug}`}
+										urlMobile={detail.postSlug}
+										title={detail.postTitle}
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-      <section className="blog-page-related">
-        <div className="page-width">
-          <div className="box">
-            <h1 className="title-r">
-              <span>সম্পর্কিত পোস্ট</span>
-            </h1>
+			<section className="blog-page-related">
+				<div className="page-width">
+					<div className="box">
+						<h1 className="title-r">
+							<span>সম্পর্কিত পোস্ট</span>
+						</h1>
 
-            <div className="row row-r">
-              {tafseers &&
-                tafseers.length &&
-                tafseers.map((tafseer) => (
-                  <div className="col col-r s12 l6 xl4" key={tafseer.id}>
-                    <PostCardTafseer tafseer={tafseer} />
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
+						<div className="row row-r">
+							{tafseers &&
+								tafseers.length &&
+								tafseers.map((tafseer) => (
+									<div className="col col-r s12 l6 xl4" key={tafseer.id}>
+										<PostCardTafseer tafseer={tafseer} />
+									</div>
+								))}
+						</div>
+					</div>
+				</div>
+			</section>
+		</>
+	);
 }
 
 export async function getStaticProps({ params }) {
-  //const resRelated = await fetch(`${server}/api/tafseers/related`)
-  //const tafseers = await resRelated.json()
+	//const resRelated = await fetch(`${server}/api/tafseers/related`)
+	//const tafseers = await resRelated.json()
 
-  const slug = params.slug;
-  const detail = await getTafseerDetails(slug);
-  const tafseers = await getRelatedTafseers();
-  const playlists = await getAllPlaylists2();
+	const slug = params.slug;
+	const detail = await getTafseerDetails(slug);
+	const tafseers = await getRelatedTafseers();
+	const playlists = await getAllPlaylists2();
 
-  return {
-    props: {
-      detail,
-      tafseers,
-      playlists: playlists.playlists,
-    },
-  };
+	return {
+		props: {
+			detail,
+			tafseers,
+			playlists: playlists.playlists,
+		},
+	};
 }
 
 export async function getStaticPaths() {
-  //const res = await fetch(`${server}/api/tafseers/listpage`)
-  //const tafseers = await res.json()
+	//const res = await fetch(`${server}/api/tafseers/listpage`)
+	//const tafseers = await res.json()
 
-  const tafseers = await getTafseers();
+	const tafseers = await getTafseers();
 
-  const paths = tafseers.map((tafseer) => ({
-    params: { slug: tafseer.postSlug },
-  }));
+	const paths = tafseers.map((tafseer) => ({
+		params: { slug: tafseer.postSlug },
+	}));
 
-  return {
-    paths,
-    fallback: false,
-  };
+	return {
+		paths,
+		fallback: false,
+	};
 }

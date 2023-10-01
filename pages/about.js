@@ -4,20 +4,13 @@ import { getAllPlaylists2 } from "../lib/fetch";
 import Layout from "../components/layout";
 import Meta from "../components/meta";
 import Header from "../components/header";
-import Link from "next/link";
-import parse from "html-react-parser";
-import BlogDetailImageSlider from "../components/home/blog-detail-image-slider";
-import Share from "../components/share";
 
 export default function About({ playlists }) {
 	return (
 		<>
 			<Meta
-				title="জীবন চরিত | ড. মুহাম্মাদ সাইফুল্লাহ অফিসিয়াল ওয়েবসাইট - Official website of Dr. Muhammad Saifullah"
-				description="ড. মুহাম্মাদ সাইফুল্লাহ একজন অধ্যাপক, ইসলামিক
-        স্কলার, লেখক, গবেষক এবং দ্বীনের একনিষ্ঠ দা'য়ী।
-        ইসলামের প্রচার-প্রসারে স্বনামধন্য মিডিয়া ব্যক্তিত্বও।
-        ফিকহ শারীআহ, ইসলামি আইন ও আইনশাস্ত্র বিভাগ, মদীনা ইসলামি বিশ্ববিদ্যালয়, কিংডম অফ সৌদি আরব থেকে ব্যাচেলর, মাস্টার্স ও পিএচডি সম্পন্ন করেন।"
+				title="জীবন চরিত"
+				description="ড. আব্দুল বাসির বিন নওশাদ 'কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ' উত্তরা, ঢাকা –এর সহকারী অধ্যাপক ও একাডেমিক প্রধান হিসেবে কর্মরত আছেন। তিনি মদীনা ইসলামী বিশ্ববিদ্যালয় থেকে  ‘কুরআনুল কারীমের প্রতি সম্মান ও ইসলামী দাওয়াতে-এর প্রভাব’ শীর্ষক অভিসন্দর্ভের ওপর পিএইচডি ডিগ্রী অর্জন করেন।"
 				url={`${server}/about`}
 				image={`${server}/img/id/default_share.png`}
 				type="website"
@@ -34,7 +27,7 @@ export default function About({ playlists }) {
 									<div className="sidebar-profile sc-1">
 										<div className="s-profile-image">
 											<Image
-												src={`${server}/img/abdul-basir.jpg`}
+												src="/img/abdul-basir.jpg"
 												alt=""
 												layout="fill"
 												objectFit="cover"

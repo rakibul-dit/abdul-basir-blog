@@ -27,8 +27,7 @@ export default function MobileNav(props) {
 									onClick={(e) => props.navControl(false)(e)}
 									className="m-menu-logo">
 									<Image
-										// src={`${server}/img/id/logo.png`}
-										src={`${server}/img/dr-saifullah-logo.png`}
+										src={`${server}/img/id/logo.png`}
 										alt=""
 										width={80}
 										height={67}
@@ -79,14 +78,6 @@ export default function MobileNav(props) {
 									<a onClick={(e) => props.navControl(false)(e)}>
 										<ClassIcon />
 										রিসার্চ পেপারস
-									</a>
-								</Link>
-							</li>
-							<li>
-								<Link href="/organizations">
-									<a onClick={(e) => props.navControl(false)(e)}>
-										<CorporateFareIcon />
-										অর্গানাইজেশনস
 									</a>
 								</Link>
 							</li>

@@ -9,6 +9,7 @@ import {
 	getAllPlaylists2,
 	getHome3Posts4,
 	getHomeBooks,
+	getHomeRecentLectures,
 } from "../lib/fetch";
 
 import Meta from "../components/meta";
@@ -43,13 +44,10 @@ export default function Home({
 	return (
 		<>
 			<Meta
-				title=""
-				description="ড. মুহাম্মাদ সাইফুল্লাহ একজন অধ্যাপক, ইসলামিক
-        স্কলার, লেখক, গবেষক এবং দ্বীনের একনিষ্ঠ দা'য়ী।
-        ইসলামের প্রচার-প্রসারে স্বনামধন্য মিডিয়া ব্যক্তিত্বও।
-        ফিকহ শারীআহ, ইসলামি আইন ও আইনশাস্ত্র বিভাগ, মদীনা ইসলামি বিশ্ববিদ্যালয়, কিংডম অফ সৌদি আরব থেকে ব্যাচেলর, মাস্টার্স ও পিএচডি সম্পন্ন করেন।"
-				url="www.muhammadsaifullah.com"
-				image="/img/id/logo.png"
+				title="হোম"
+				description="ড. আব্দুল বাসির বিন নওশাদ 'কুল্লিয়াতুল কুরআনিল কারীম ওয়াদ-দিরাসাতিল ইসলামিয়্যাহ' উত্তরা, ঢাকা –এর সহকারী অধ্যাপক ও একাডেমিক প্রধান হিসেবে কর্মরত আছেন। তিনি মদীনা ইসলামী বিশ্ববিদ্যালয় থেকে  ‘কুরআনুল কারীমের প্রতি সম্মান ও ইসলামী দাওয়াতে-এর প্রভাব’ শীর্ষক অভিসন্দর্ভের ওপর পিএইচডি ডিগ্রী অর্জন করেন।"
+				url={server}
+				image={`${server}/img/id/default_share.png`}
 				type="website"
 			/>
 
@@ -71,7 +69,7 @@ export default function Home({
 export async function getStaticProps(context) {
 	// const images = await getOptHomeImages();
 	// const blogs = await getOptHomeBlogs();
-	const lectures = await getHomeLectures();
+	const lectures = await getHomeRecentLectures();
 	// const quotes = await getOptHomeQuotes();
 	// const books = await getOptHomeBooks();
 	// const organizations = await getHomeOrganizations();
@@ -82,7 +80,7 @@ export async function getStaticProps(context) {
 	const posts4 = await getHome3Posts4();
 	// const organizations2 = await getHomeOrganizations();
 	const books = await getHomeBooks();
-
+	// console.log(lectures);
 	return {
 		props: {
 			// images,

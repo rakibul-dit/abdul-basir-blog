@@ -69,8 +69,7 @@ export default function Footer() {
 							<Link href="/">
 								<a className="footer-logo">
 									<Image
-										// src={`${server}/img/id/logo_english.png`}
-										src="/img/dr-saifullah-logo.png"
+										src="/img/id/logo.png"
 										alt=""
 										width={132}
 										height={117}
@@ -179,7 +178,7 @@ export default function Footer() {
 												// src={`${server}/img/id/logo_english.png`}
 												// width={120}
 												// height={26}
-												src="/img/dr-saifullah-logo.png"
+												src="/img/id/logo.png"
 												alt=""
 												width={82}
 												height={72}

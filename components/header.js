@@ -61,7 +61,7 @@ export default function Header({ playlists }) {
 							<Link href="/">
 								<a className="header-logo">
 									<Image
-										src="/img/dr-saifullah-logo.png"
+										src="/img/id/logo.png"
 										alt=""
 										width={100}
 										height={100}
@@ -164,19 +164,6 @@ export default function Header({ playlists }) {
 											{/*  <ArticleIcon />*/}
 											{/*</span>*/}
 											প্রবন্ধ সমূহ
-										</a>
-									</Link>
-								</li>
-								<li>
-									<Link href="/organizations">
-										<a
-											className={
-												router.pathname == "/organizations" ? "active" : ""
-											}>
-											{/*<span className="main-menu-icon">*/}
-											{/*  <CorporateFareIcon />*/}
-											{/*</span>*/}
-											অর্গানাইজেশনস
 										</a>
 									</Link>
 								</li>
